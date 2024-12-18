@@ -8,7 +8,7 @@ import clip
 
 @pytest.mark.parametrize('model_name', clip.available_models())
 def test_consistency(model_name):
-    device = "cpu"
+    device = "gpu"
     jit_model, transform = clip.load(model_name, device=device, jit=True)
     py_model, _ = clip.load(model_name, device=device, jit=False)
 
